@@ -4,5 +4,4 @@ dist
 public
 .idea
 npm-debug*
-img
 *.iml

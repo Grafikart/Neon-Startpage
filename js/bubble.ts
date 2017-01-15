@@ -14,6 +14,7 @@ export class Bubble {
 
   constructor(element: HTMLElement) {
     this.element = element
+    this.setPosition(element)
     this.handle = new BubbleHandler(element.querySelector('[data-handle]') as HTMLElement, this.delta)
     this.handle.element.addEventListener('mousemove', (e) => {
       window.requestAnimationFrame(() => this.mouseMove(e) )
@@ -21,6 +22,32 @@ export class Bubble {
     this.handle.element.addEventListener('mouseover', this.mouseOver.bind(this))
     this.handle.element.addEventListener('mouseout', this.mouseOut.bind(this))
     this.animateEnter(this.element)
+  }
+
+  private setPosition (element: HTMLElement) {
+    const index = Array.from((element.parentNode as HTMLElement).children).indexOf(element) + 1
+    const row = Math.ceil(index / 5) - 1
+    const position = index - row * 5 // position from 1 to 5
+    const randomX = Math.random() * 20 - 10
+    const randomY = Math.random() * 80 - 50
+    const rowHeight = 150
+    if (position < 3) {
+      element.style.top = (rowHeight * 2 * row + randomY) + 'px'
+      element.style.left = (33.33 * position + randomX) + '%'
+    } else {
+      element.style.top = (rowHeight + rowHeight * 2 * row + randomY) + 'px'
+      switch (position - 3) {
+        case 0:
+          element.style.left = (10 + randomX) + '%'
+          break
+        case 1:
+          element.style.left = (50 + randomX) + '%'
+          break
+        default:
+          element.style.left = (90 + randomX) + '%'
+          break
+      }
+    }
   }
 
   /**
