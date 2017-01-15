@@ -21,6 +21,14 @@ export class BubbleHandler {
   constructor (element: HTMLElement, delta) {
     this.element = element
     element.style.margin = `${this.expansion / 2}px`
+    this.setPosition(element)
+    this.delta = delta
+    window.addEventListener('resize', () => {
+      this.setPosition(element)
+    })
+  }
+
+  public setPosition (element: HTMLElement) {
     let rect = element.getBoundingClientRect()
     this.center = {
       x: rect.left + window.scrollX + rect.width / 2,
@@ -28,7 +36,6 @@ export class BubbleHandler {
     }
     this.width = rect.width
     this.height = rect.height
-    this.delta = delta
   }
 
   /**
