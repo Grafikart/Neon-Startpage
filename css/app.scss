@@ -6,7 +6,7 @@ html {
   padding: 0;
   background: center center no-repeat;
   background-size: cover;
-  font-family: sans-serif;
+  font-family: "Open Sans", sans-serif;
   overflow: hidden;
 }
 
@@ -64,7 +64,7 @@ html {
 
 .bubble__label {
   padding-top: 5px;
-  font-weight: bold;
+  font-size: 14px;
 }
 
 @keyframes blink {
