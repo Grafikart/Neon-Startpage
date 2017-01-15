@@ -2,7 +2,7 @@
 
 This is a work in progress. The goal is to reproduce Opera Neon start page using HTML / CSS / JS
 
-Preview : https://www.grafikart.fr/demo/JS/Bubbles/index.html
+Preview : https://grafikart.github.io/Neon-Startpage/dist/
 
 ## TODO
  
