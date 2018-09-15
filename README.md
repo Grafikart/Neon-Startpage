@@ -10,11 +10,13 @@ Preview : https://grafikart.github.io/Neon-Startpage/dist/
 - Better positioning of bubbles
 - Improve animations on hover using CSS instead of dynamics.js
 - Animate page opening (when clicking on a bubble)
+-----> include resource/source links for above here
 
 ## Future 
 
 - Save bubble positions using localstorage
 - Create an interface to add bubbles
+-----> include resource/source links for above here
 
 ## Setup the project 
 
